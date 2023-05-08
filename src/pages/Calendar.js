@@ -1,6 +1,11 @@
+import { Container } from 'reactstrap';
+import EventCalendar from '../features/calendar/FullCalendar';
+
 const Calendar = () => {
   return (
-    <div>Calendar</div>
+    <Container className='ms-auto'>
+      <EventCalendar />
+    </Container>
   )
 }
 export default Calendar;
