@@ -6,12 +6,12 @@ import BCFMCLogo from '../app/assets/img/logo.png';
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <Navbar dark color='primary' expand='lg'>
+        <Navbar dark color='primary' expand='xl'>
             <NavbarBrand className='ms-5' href='/' >
                 <img src={BCFMCLogo} alt='BCFMC logo' className='float-start' />
-                <h1 class='site-heading my-auto'>
-                    <span class='site-heading-upper'>Bayou City Federated Music Club</span>
-                    <span class='site-heading-lower'>Gold Cup Festival</span>
+                <h1 className='site-heading my-auto'>
+                    <span className='site-heading-upper'>Bayou City Federated Music Club</span>
+                    <span className='site-heading-lower'>Gold Cup Festival</span>
                 </h1>
             </NavbarBrand>
             <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
@@ -33,8 +33,8 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/entry'>
-                            <i className='fa fa-address-card fa-lg' /> Entry
+                        <NavLink className='nav-link' to='/registration'>
+                            <i className='fa fa-address-card fa-lg' /> Registration
                         </NavLink>
                     </NavItem>
                 </Nav>

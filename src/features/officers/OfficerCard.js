@@ -11,7 +11,7 @@ const OfficerCard = ({ officer }) => {
                     <CardTitle>{name}</CardTitle>
                 </CardImgOverlay>
                 <CardBody>
-                    <CardText className='text-center'><h5>{title}</h5></CardText>
+                    <CardText className='text-center'>{title}</CardText>
                 </CardBody>
             </Card>
         </Link>
