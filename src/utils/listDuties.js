@@ -1,7 +1,7 @@
-export const listDuties = ({ duties }) => {
+export const listDuties = (duties) => {
     return (
         <ul>
-            {duties?.map((duty) => (
+            {duties.map((duty) => (
                 <li key={duty}>{duty}</li>
             ))}
         </ul>
