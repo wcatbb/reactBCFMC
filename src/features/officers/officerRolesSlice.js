@@ -1,14 +1,14 @@
 import { ROLES } from "../../app/shared/ROLES";
 import { OFFICERS } from "../../app/shared/OFFICERS";
 
-export const selectDutiesByOfficerId = (arrayOfIds) => {
+export const selectRolesByRolesId = (rolesArray) => {
 	const roles = OFFICERS
-		.filter(officer => arrayOfIds.includes(officer.id))
+		.filter(officer => rolesArray.includes(officer.id))
 		.flatMap(officer => officer.roleIds);
 
-	const duties = ROLES
+	const officerTitles = ROLES
 		.filter(role => roles.includes(role.id))
-		.flatMap(role => role.duties);
+		.flatMap(role => role.title);
 
-	return [...new Set(duties)];
+	return [...new Set(officerTitles)];
 }

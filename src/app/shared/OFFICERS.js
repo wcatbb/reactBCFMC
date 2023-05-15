@@ -5,66 +5,66 @@ export const OFFICERS = [
         id: 0,
         name: 'Rick Valentine',
         image: defaultOfficer,
-        title: 'President'
+        roleIds: [0, 10]
     },
     {
         id: 1,
         name: 'Alina Uddin',
         image: defaultOfficer,
-        title: 'Vice President'
+        roleIds: [1, 6, 11]
     },
     {
         id: 2,
         name: 'Lynn Anders',
         image: defaultOfficer,
-        title: 'Secretary'
+        roleIds: [2]
     },
     {
         id: 3,
         name: 'Iris Beatty',
         image: defaultOfficer,
-        title: 'Treasurer'
+        roleIds: [3, 10]
     },
     {
         id: 4,
         name: 'Dianne Schoppe',
         image: defaultOfficer,
-        title: 'Festival Chair'
+        roleIds: [4, 8]
     },
     {
         id: 5,
         name: 'Georgina Bruckner',
         image: defaultOfficer,
-        title: 'Festival Chair'
+        roleIds: [4]
     },
     {
         id: 6,
         name: 'Kao Taniguchi',
         image: defaultOfficer,
-        title: 'Judges Chair'
+        roleIds: [5]
     },
     {
         id: 7,
         name: 'Carolina Tong',
         image: defaultOfficer,
-        title: 'Data Entry Chair'
+        roleIds: [6]
     },
     {
         id: 8,
         name: 'Lora Taylor',
         image: defaultOfficer,
-        title: 'Refreshments Chair'
+        roleIds: [7]
     },
     {
         id: 9,
         name: 'Kiersten Baker',
         image: defaultOfficer,
-        title: 'Trophies Chair'
+        roleIds: [8]
     },
     {
         id: 10,
         name: 'Lisa Taylor',
         image: defaultOfficer,
-        title: 'Monitors Chair'
+        roleIds: [9]
     }
 ];
