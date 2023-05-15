@@ -1,12 +1,11 @@
 import { Card, CardImg, CardBody, CardText, CardImgOverlay, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { listRoles } from '../../utils/listRoles';
-import { selectRolesByRolesId } from './officerRolesSlice';
+import { selectFeaturedRole } from './featuredRoleSlice';
 
 const OfficerCard = ({ officer }) => {
-    const { id, image, name, roleIds } = officer;
-    const roles = selectRolesByRolesId(roleIds); //function that converts roleIds into roles
-    const list = listRoles(roles);
+    const { id, image, name, featuredRoleId } = officer;
+    const role = selectFeaturedRole(featuredRoleId); //function that converts roleIds into role names
+
 
     return (
         <Link to={`${id}`}>
@@ -16,7 +15,7 @@ const OfficerCard = ({ officer }) => {
                     <CardTitle>{name}</CardTitle>
                 </CardImgOverlay>
                 <CardBody>
-                    <CardText className='text-center'>{list}</CardText>
+                    <CardText className='text-center'>{role}</CardText>
                 </CardBody>
             </Card>
         </Link>
