@@ -1,4 +1,4 @@
-import { Card, CardImg, CardBody, CardText, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { selectFeaturedRole } from './featuredRoleSlice';
 
@@ -8,17 +8,15 @@ const OfficerCard = ({ officer }) => {
 
 
     return (
-        <Link to={`${id}`}>
-            <Card>
+        <Card>
+            <Link to={`${id}`}>
                 <CardImg width='100%' src={image} alt={name} />
-                <CardImgOverlay>
-                    <CardTitle>{name}</CardTitle>
-                </CardImgOverlay>
-                <CardBody>
-                    <CardText className='text-center'>{role}</CardText>
-                </CardBody>
-            </Card>
-        </Link>
+            </Link>
+            <CardBody>
+                <CardTitle>{name}</CardTitle>
+                <CardSubtitle className='text-center'>{role}</CardSubtitle>
+            </CardBody>
+        </Card>
     );
 };
 

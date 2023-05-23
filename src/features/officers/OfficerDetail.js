@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
+import { Card, CardImg, CardTitle, CardBody, Col } from 'reactstrap';
 import { selectFeaturedRole } from './featuredRoleSlice';
 
 const OfficerDetail = ({ officer }) => {
@@ -10,7 +10,7 @@ const OfficerDetail = ({ officer }) => {
             <Card>
                 <CardImg top src={image} alt={name} />
                 <CardBody>
-                    <CardText className='text-center'>{role}</CardText>
+                    <CardTitle>{role}</CardTitle>
                 </CardBody>
             </Card>
         </Col>

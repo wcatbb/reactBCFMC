@@ -58,15 +58,5 @@ export const ROLES = [
         id: 11,
         title: 'Scheduling Chair',
         duties: ['Allocates time slots for each teacher', 'Procures festival location']
-    },
-    {
-        id: 12,
-        title: 'Random Chair',
-        duties: ['Officer of random']
-    },
-    {
-        id: 13,
-        title: 'Vice random president',
-        duties: ['Head of randomness']
     }
-]
+];

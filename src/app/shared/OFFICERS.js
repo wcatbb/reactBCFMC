@@ -77,19 +77,5 @@ export const OFFICERS = [
         image: defaultOfficer,
         featuredRoleId: 9,
         roleIds: [9]
-    },  
-    {
-        id: 11,
-        name: 'Random Officer',
-        image: defaultOfficer,
-        featuredRoleId: 12,
-        roleIds: [12, 13]
-    },
-    {
-        id: 12,
-        name: 'Test Officer',
-        image: defaultOfficer,
-        featuredRoleId: 13,
-        roleIds: [13]
     }
 ];

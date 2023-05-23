@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import UserLoginForm from '../features/user/UserLoginForm';
 import BCFMCLogo from '../app/assets/img/logo.png';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <Navbar dark color='primary' expand='xl'>
-            <NavbarBrand className='ms-5' href='/' >
+            <NavbarBrand href='/' >
                 <img src={BCFMCLogo} alt='BCFMC logo' className='float-start' />
                 <h1 className='site-heading my-auto'>
                     <span className='site-heading-upper'>Bayou City Federated Music Club</span>
@@ -33,11 +34,17 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/registration'>
-                            <i className='fa fa-address-card fa-lg' /> Registration
+                        <NavLink className='nav-link' to='/entry'>
+                            <i className='fa fa-address-card fa-lg' /> Entry
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className='nav-link' to='/cart'>
+                            <i className='fa fa-shopping-cart fa-lg' /> Cart
                         </NavLink>
                     </NavItem>
                 </Nav>
+                <UserLoginForm />
             </Collapse>
         </Navbar >
     );

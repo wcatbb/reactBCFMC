@@ -4,8 +4,10 @@ import { Footer } from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Calendar from './pages/Calendar';
-import Registration from './pages/Registration';
+import Entry from './pages/Entry';
 import Officer from './pages/Officer';
+import Item from './pages/Item';
+import Cart from './pages/Cart'
 import './App.css';
 
 function App() {
@@ -16,10 +18,15 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='calendar' element={<Calendar />} />
-        <Route path='registration' element={<Registration />} />
+        <Route path='entry' element={<Entry />} />
+        <Route path='cart' element={<Cart />} />
         <Route
-            path='about/:officerId'
-            element={<Officer />}
+          path='about/:officerId'
+          element={<Officer />}
+        />
+        <Route
+          path='entry/:itemId'
+          element={<Item />}
         />
       </Routes>
       <Footer />

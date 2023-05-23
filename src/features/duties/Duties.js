@@ -3,7 +3,7 @@ import { listDuties } from '../../utils/listDuties';
 import { Col } from 'reactstrap';
 
 const Duties = ({ officerId }) => {
-    const duties = selectDutiesByOfficerId(officerId);
+    const duties = selectDutiesByOfficerId([+officerId]);
     const list = listDuties(duties);
 
     if (list) {
