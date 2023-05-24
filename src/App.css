@@ -29,6 +29,20 @@ h2 {
   min-height: 200px;
 }
 
+.jumbotron {
+  display: fluid;
+  padding: 2rem 1rem;
+  background-image: url('../src/app/assets/img/bg.png');
+  background-size: cover;
+  background-color: rgb(122, 109, 59);
+}
+
+.jumbotron img {
+  max-width: 75%;
+  height: auto;
+  margin-left: 3rem;
+}
+
 .site-footer {
   background-image: linear-gradient(#cec8ff, white);
   padding: 20px 0;
@@ -38,46 +52,39 @@ h2 {
 }
 
 .site-heading {
-  margin-top: 3.75rem;
-  margin-bottom: 3.75rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Helvetica Neue';
+  text-align: left;
 }
 
 .site-heading .site-heading-upper {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #e6a756;
 }
 
 .site-heading .site-heading-lower {
-  font-size: 3.75rem;
+  font-size: 4rem;
   font-weight: 100;
   line-height: 4rem;
-}
-
-.navbar-brand {
-  max-width: 4rem;
-}
-
-.navbar-brand img {
-  width: 150%;
-  height: auto;
-  margin-right: 1rem;
+  color: whitesmoke;
 }
 
 .navbar-dark {
   background-color: #901cad;
   background-image: linear-gradient(to right, #020202, #3046c5, #510e5a);
   margin-bottom: 2rem;
-  min-height: 8rem;
+  min-height: 5rem;
 }
+
 .navbar-toggler-icon {
   background-image: url('../src/app/assets/img/toggler.svg') !important;
-  width: 60px !important;
-  height: 60px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .page-enter {

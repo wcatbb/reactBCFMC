@@ -10,7 +10,7 @@ const ItemsList = () => {
             {items.map((item) => {
                 return (
                     <Col
-                        sm='4'
+                        xs='4'
                         className='m-2 mx-auto'
                         key={item.id}>
                         <ItemCard item={item} />

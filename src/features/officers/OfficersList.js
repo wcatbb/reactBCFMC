@@ -9,7 +9,7 @@ const OfficersList = () => {
             {officers.map((officer) => {
                 return (
                     <Col
-                        sm='4'
+                        xs='4'
                         className='m-2 mx-auto'
                         key={officer.id}>
                         <OfficerCard officer={officer} />
