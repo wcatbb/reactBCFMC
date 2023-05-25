@@ -1,9 +1,11 @@
 import { Card, CardImg, CardTitle, CardBody, Col } from 'reactstrap';
 import { selectFeaturedRole } from './featuredRoleSlice';
+import { useSelector } from 'react-redux';
 
 const OfficerDetail = ({ officer }) => {
     const { image, name, featuredRoleId } = officer;
-    const role = selectFeaturedRole(featuredRoleId); //function that converts roleIds into role names
+    const role = useSelector(selectFeaturedRole(featuredRoleId)); //function that converts featuredRoleIds into role names
+    console.log(role);
 
     return (
         <Col md='5' className='m-1'>

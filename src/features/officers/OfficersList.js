@@ -1,9 +1,10 @@
 import { selectAllOfficers } from "./officersSlice";
 import { Col, Row } from 'reactstrap';
 import OfficerCard from "./OfficerCard";
+import { useSelector } from "react-redux";
 
 const OfficersList = () => {
-    const officers = selectAllOfficers();
+    const officers = useSelector(selectAllOfficers);
     return (
         <Row className='ms-auto'>
             {officers.map((officer) => {

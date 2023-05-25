@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux';
 import { selectDutiesByOfficerId } from './dutiesSlice';
 import { listDuties } from '../../utils/listDuties';
 import { Col } from 'reactstrap';
 
 const Duties = ({ officerId }) => {
-    const duties = selectDutiesByOfficerId([+officerId]);
+    const duties = useSelector(selectDutiesByOfficerId([+officerId]));
     const list = listDuties(duties);
 
     if (list) {

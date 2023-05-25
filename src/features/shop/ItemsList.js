@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import { selectAllItems } from './itemsSlice';
 import ItemCard from './ItemCard';
 
 const ItemsList = () => {
-    const items = selectAllItems();
+    const items = useSelector(selectAllItems);
 
     return (
         <Row className='ms-auto'>
