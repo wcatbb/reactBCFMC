@@ -9,14 +9,16 @@ const Duties = ({ officerId }) => {
 
     if (list) {
         return (
-            <Col md='6' className='m-1'>
-                <h4>Duties</h4>
+            <Col md='6' className='m-1 bg-faded p-4 rounded'>
+                <h5 className='section-heading mb-2'>
+                    Duties
+                </h5>
                 {list}
             </Col>
         );
     };
     return (
-        <Col md='6' className='m-1'>
+        <Col md='6' className='m-1 bg-faded p-4 rounded'>
             This officer has no duties.
         </Col>
     );

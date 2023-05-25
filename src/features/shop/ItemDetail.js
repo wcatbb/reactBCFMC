@@ -7,10 +7,10 @@ const ItemDetail = ({ item }) => {
         <Container>
             <Row>
                 <Col md='5' className='m-1'>
-                    <img src={image} alt={name} width='100%' />
+                    <img className='intro-img img-fluid mb-3 mb-lg-0 rounded' src={image} alt={name} width='100%' />
                 </Col>
-                <Col>
-                <h4>Description</h4>
+                <Col md='6' className='m-1 bg-faded p-4 rounded'>
+                <h5 className='section-heading mb-2'>Description</h5>
                     {description} ${price}
                 </Col>
             </Row>
