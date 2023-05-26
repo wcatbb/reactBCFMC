@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Col, Row, Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import UserLoginForm from '../features/user/UserLoginForm';
@@ -6,6 +7,16 @@ import BCFMCLogo from '../app/assets/img/logo.png';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    // const cart = useSelector((state) => state.cart.cart);
+    
+    // // const getTotalQuantity = () => {
+    // //     let total = 0
+    // //     cart.forEach(item => {
+    // //         total += item.quantity
+    // //     })
+    // //     return total
+    // // }
+
     return (
         <>
             <Row className='jumbotron'>
@@ -48,7 +59,7 @@ const Header = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink className='nav-link text-uppercase' to='/cart'>
-                                    <i className='fa fa-shopping-cart fa-2x' /> Cart
+                                <i className='fa fa-shopping-cart fa-2x' /> Cart 
                                 </NavLink>
                             </NavItem>
                         </Nav>

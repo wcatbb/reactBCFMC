@@ -5,6 +5,7 @@ import { dutiesReducer } from '../features/duties/dutiesSlice';
 import { officersReducer } from '../features/officers/officersSlice';
 import { featuredRoleReducer } from '../features/officers/featuredRoleSlice';
 import { itemsReducer } from '../features/shop/itemsSlice';
+import { cartReducer } from '../features/shop/cartSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +13,8 @@ export const store = configureStore({
     officers: officersReducer,
     duties: dutiesReducer,
     featuredRole: featuredRoleReducer,
-    items: itemsReducer
+    items: itemsReducer,
+    cart: cartReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logger])
 });
