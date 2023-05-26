@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { SHOP_ITEMS } from "../../app/shared/SHOP_ITEMS";
+import { createSlice } from '@reduxjs/toolkit';
+import { SHOP_ITEMS } from '../../app/shared/SHOP_ITEMS';
 
 const initialState = {
     itemsArray: SHOP_ITEMS

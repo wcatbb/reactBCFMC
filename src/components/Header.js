@@ -7,15 +7,18 @@ import BCFMCLogo from '../app/assets/img/logo.png';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    // const cart = useSelector((state) => state.cart.cart);
+    const cart = useSelector((state) => state.cart.cart);
     
-    // // const getTotalQuantity = () => {
-    // //     let total = 0
-    // //     cart.forEach(item => {
-    // //         total += item.quantity
-    // //     })
-    // //     return total
-    // // }
+    const getTotalQuantity = () => {
+        let total = 0
+        cart.forEach(item => {
+            total += item.quantity
+        })
+        return total
+    }
+
+    const emptyCart = (getTotalQuantity() === 0);
+    console.log("empty:", emptyCart);
 
     return (
         <>
@@ -59,7 +62,9 @@ const Header = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink className='nav-link text-uppercase' to='/cart'>
-                                <i className='fa fa-shopping-cart fa-2x' /> Cart 
+                                {emptyCart ? <i className='fa fa-shopping-cart fa-2x' />
+                                :<><i className='fa fa-shopping-cart fa-2x' />
+                                <span class='badge badge-warning' id='lblCartCount'>{getTotalQuantity()}</span></>} Cart
                                 </NavLink>
                             </NavItem>
                         </Nav>

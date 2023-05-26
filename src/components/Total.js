@@ -11,15 +11,23 @@ const Total = () => {
       totalQuantity += item.quantity
       totalPrice += item.price * item.quantity
     })
-    return {totalPrice, totalQuantity}
+    return { totalPrice, totalQuantity }
   }
- 
-  return (
+
+  const totalItems = getTotal().totalQuantity;
+
+  if (totalItems === 0) {
+    return (
+      <Container className="total bg-faded">
+        <h5>YOUR CART IS EMPTY</h5>
+      </Container>
+    )
+  } return (
     <Container className="total bg-faded">
       <h5>ORDER SUMMARY</h5>
       <Row>
-        <p className="total__p">
-          total ({getTotal().totalQuantity} items) 
+        <p className="total-p">
+          Total ({totalItems} items)
           : <strong>${getTotal().totalPrice}</strong>
         </p>
       </Row>
