@@ -17,13 +17,12 @@ const Header = () => {
         return total
     }
 
-    const emptyCart = (getTotalQuantity() === 0);
-    console.log("empty:", emptyCart);
+const emptyCart = (getTotalQuantity() === 0);
 
     return (
         <>
             <Row className='jumbotron'>
-                <Col className='my-auto ms-auto col-sm-4 col-md-3 d-none d-md-block'>
+                <Col className='my-auto col-md-3 d-none d-md-block'>
                     <NavbarBrand href='/'>
                         <img src={BCFMCLogo} alt='BCFMC logo' />
                     </NavbarBrand>

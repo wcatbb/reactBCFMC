@@ -33,7 +33,7 @@ const UserLoginForm = () => {
         <>
             <span className='navbar-text ml-auto'>
                 {currentUser ? (
-                    <div style={{ width: '4rem', height: '4rem' }}>
+                    <div style={{ width: '3rem', height: '3rem' }}>
                         <img
                             src={currentUser.avatar}
                             alt={'user'}
@@ -50,7 +50,7 @@ const UserLoginForm = () => {
                     </Button>
                 )}
                 <Modal isOpen={loginModalOpen}>
-                    <ModalHeader toggle={() => setLoginModalOpen(false)}>Login</ModalHeader>
+                    <ModalHeader toggle={() => setLoginModalOpen(false)}><h4 className='modal-title'>Login</h4></ModalHeader>
                     <ModalBody>
                         <Formik
                             initialValues={{
