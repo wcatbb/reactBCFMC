@@ -6,7 +6,6 @@ import {
     ModalHeader,
     ModalBody,
     FormGroup,
-    Label,
     Button
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
@@ -22,7 +21,7 @@ const UserLoginForm = () => {
         const currentUser = {
             id: Date.now(),
             avatar: defaultAvatar,
-            username: values.username,
+            email: values.email,
             password: values.password
         }
         dispatch(setCurrentUser(currentUser));
@@ -54,7 +53,7 @@ const UserLoginForm = () => {
                     <ModalBody>
                         <Formik
                             initialValues={{
-                                username: '',
+                                email: '',
                                 password: ''
                                 }}
                             onSubmit={handleLogin}
@@ -62,19 +61,17 @@ const UserLoginForm = () => {
                         >
                             <Form>
                                 <FormGroup>
-                                    <Label htmlFor='username'>Username</Label>
                                     <Field
-                                        id='username'
-                                        name='username'
-                                        placeholder='Username'
+                                        id='email'
+                                        name='email'
+                                        placeholder='Email'
                                         className='form-control'
                                     />
-                                    <ErrorMessage name='username'>
+                                    <ErrorMessage name='email'>
                                         {(msg) => <p className='text-danger'>{msg}</p>}
                                     </ErrorMessage>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label htmlFor='password'>Password</Label>
                                     <Field
                                         id='password'
                                         name='password'

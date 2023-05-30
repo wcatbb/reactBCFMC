@@ -1,14 +1,14 @@
 export const validateUserLoginForm = (values) => {
     const errors = {};
 
-    if (!values.username) {
-        errors.username = 'Required';
+    if (!values.email) {
+        errors.email = 'Required';
     }
-    else if (values.username.length < 2) {
-        errors.username = 'Must be at least 2 characters.';
+    else if (values.email.length < 2) {
+        errors.email = 'Must be at least 2 characters.';
     }
-    else if (values.username.length > 15) {
-        errors.username = 'Must be 15 characters or less.';
+    else if (values.email.length > 15) {
+        errors.email = 'Must be 15 characters or less.';
     }
 
     if (!values.password) {
