@@ -120,10 +120,12 @@ const UserRegisterForm = () => {
                                             </ErrorMessage>
                                         </Col>
                                         <label for='state' className='col-md-1 col-form-label'>State:</label>
-                                        <Col>
+                                        <Col className='col-md-2'>
                                             <Field
-                                                component='select'
+                                                id='state'
                                                 name='state'
+                                                component='select'
+                                                className='form-control'
                                             >
                                                 <option value="AL">AL</option>
                                                 <option value="AK">AK</option>

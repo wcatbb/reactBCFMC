@@ -1,4 +1,4 @@
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import { increaseQuantity, decreaseQuantity, removeItem } from '../shop/cartSlice';
 import { useDispatch } from 'react-redux';
 
