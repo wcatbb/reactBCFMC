@@ -56,6 +56,7 @@ h2 {
 .bg-faded {
   background-color: #FFFAE3;
   filter: drop-shadow(1px 1px 2px black);
+  margin-bottom: 2rem;
 }
 
 .intro {
@@ -311,22 +312,11 @@ h2 {
   font-size: 20px;
   font-weight: 450;
   color: rgb(72, 77, 77);
+  width: unset;
+  text-align: center;
 }
 
 .total > button:active{
   background-color: unset;
   border: 1px solid #FFD814;
-}
-
-@media(max-width:800px){
-  .total{
-    width: unset;
-    text-align: center;
-  }
-}
-
-@media(max-width:900px){
-  .total{
-    min-width: unset;
-  }
 }

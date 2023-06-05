@@ -285,7 +285,7 @@ const UserRegisterForm = () => {
                                                     <label for='volunteer' className='btn btn-success btn-sm'>Volunteer
                                                         <input
                                                             type='radio'
-                                                            id='teacher'
+                                                            id='volunteer'
                                                             defaultChecked={values.status === 'volunteer'}
                                                             name='status'
                                                             value='volunteer'

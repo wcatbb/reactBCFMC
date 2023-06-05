@@ -21,7 +21,9 @@ const ItemCard = ({ item }) => {
                             dispatch(addToCart({
                                 id, name, image, price
                             }))
-                        }>Add to Cart<span className='position-absolute top-0 start-100 translate-middle p-2 bg-primary border border-light rounded-circle'>${price}</span></Button>
+                        }
+                    >Add to Cart<span className='position-absolute top-0 start-100 translate-middle p-2 bg-primary border border-light rounded-circle'>${price}</span>
+                    </Button>
                 </div>
             </CardBody>
         </Card>

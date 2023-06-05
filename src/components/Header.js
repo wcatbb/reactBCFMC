@@ -7,7 +7,7 @@ import BCFMCLogo from '../app/assets/img/logo.png';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const cart = useSelector((state) => state.cart.cart);
+    const cart = useSelector((state) => state.cart.products);
     
     const getTotalQuantity = () => {
         let total = 0
@@ -63,7 +63,7 @@ const emptyCart = (getTotalQuantity() === 0);
                                 <NavLink className='nav-link text-uppercase' to='/cart'>
                                 {emptyCart ? <i className='fa fa-shopping-cart fa-2x' />
                                 :<><i className='fa fa-shopping-cart fa-2x' />
-                                <span class='badge badge-warning' id='lblCartCount'>{getTotalQuantity()}</span></>} Cart
+                                <span className='badge badge-warning' id='lblCartCount'>{getTotalQuantity()}</span></>} Cart
                                 </NavLink>
                             </NavItem>
                         </Nav>

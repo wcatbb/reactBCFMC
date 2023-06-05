@@ -1,12 +1,14 @@
 import CartItem from '../features/shop/CartItem';
-import Total from '../components/Total';
-import { Container, Row, Col } from 'reactstrap';
+import Total from '../features/shop/Total';
+import { Container, Row, Col, Button } from 'reactstrap';
 import { SubHeader } from '../components/SubHeader';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { emptyCart } from '../features/shop/cartSlice';
 
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart.cart)
+  const cart = useSelector((state) => state.cart.products)
+  const dispatch = useDispatch();
   const itemInCart = cart.length > 0;
 
   if (!itemInCart) {
@@ -21,17 +23,26 @@ const Cart = () => {
       <SubHeader current='Cart' />
       <Row className='cart'>
         <Col className='cart-left'>
-          {cart?.map((item) => (
+          {cart.map((item) => (
             <CartItem
               id={item.id}
+              key={item.id}
               image={item.image}
               name={item.name}
               price={item.price}
               quantity={item.quantity}
             />
           ))}
+          <Button
+            className='btn btn-outline-warning mt-2'
+            style={{ width: 180, height: 'auto', margin: 20 }}
+            onClick={() =>
+              dispatch(emptyCart())
+            }
+          >Empty Cart
+          </Button>
         </Col>
-        <Col className='cart-right mt-4'>
+        <Col className='cart-right mt-2'>
           <Total />
         </Col>
       </Row>

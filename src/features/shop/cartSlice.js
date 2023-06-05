@@ -3,23 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    cart: [],
+    products: [],
   },
   reducers: {
     addToCart: (state, action) => {
-      const itemInCart = state.cart.find((item) => item.id === action.payload.id);
+      const itemInCart = state.products.find((item) => item.id === action.payload.id);
       if (itemInCart) {
         itemInCart.quantity++;
       } else {
-        state.cart.push({ ...action.payload, quantity: 1 });
+        state.products.push({ ...action.payload, quantity: 1 });
       }
     },
     increaseQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.products.find((item) => item.id === action.payload);
       item.quantity++;
     },
     decreaseQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.products.find((item) => item.id === action.payload);
       if (item.quantity === 1) {
         item.quantity = 1
       } else {
@@ -27,11 +27,24 @@ const cartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      const removeItem = state.cart.filter((item) => item.id !== action.payload);
-      state.cart = removeItem;
+      const removeItem = state.products.filter((item) => item.id !== action.payload);
+      state.products = removeItem;
     },
+    emptyCart: (state) => {
+      state.products = [];
+    }
   },
 });
+
+export const cartQuantitySelector = (state) => state.cart.products.reduce(
+  (quantity, item) => quantity + item.quantity,
+  0
+);
+
+export const cartTotalSelector = (state) => state.cart.products.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
 
 export const cartReducer = cartSlice.reducer;
 export const {
@@ -39,4 +52,5 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeItem,
+  emptyCart
 } = cartSlice.actions;
