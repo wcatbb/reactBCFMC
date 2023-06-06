@@ -6,6 +6,7 @@ const Calendar = () => {
     <Container className='ms-auto'>
       <EventCalendar />
     </Container>
-  )
-}
+  );
+};
+
 export default Calendar;
