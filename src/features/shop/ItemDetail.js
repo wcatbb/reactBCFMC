@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'reactstrap';
 
 const ItemDetail = ({ item }) => {
-    const { image, name, price, description } = item;
+    const { image, name, description } = item;
 
     return (
         <Container>
@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
                 </Col>
                 <Col md='6' className='m-1 bg-faded p-4 rounded'>
                 <h5 className='section-heading mb-2'>Description</h5>
-                    {description} ${price}
+                    {description}
                 </Col>
             </Row>
         </Container>

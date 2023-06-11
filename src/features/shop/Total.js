@@ -19,7 +19,7 @@ const Total = () => {
       <h5>ORDER SUMMARY</h5>
       <Row>
         <p className="total-p">
-          Total ({cartQuantity} items)
+          Total ({cartQuantity} {cartQuantity === 1 ? 'item' : 'items'})
           : <strong>${cartTotal}</strong>
         </p>
       </Row>

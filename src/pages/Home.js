@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'reactstrap';
 import { SubHeader } from '../components/SubHeader';
 import UserRegisterForm from '../features/user/UserRegisterForm';
-import introPhoto from '../app/assets/img/intro.png'
+import introPhoto from '../app/assets/img/intro.jpg'
 
 
 const Home = () => {

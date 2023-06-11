@@ -1,9 +1,17 @@
 import GooglePayButton from '@google-pay/button-react';
-import { cartTotalSelector } from './cartSlice';
-import { useSelector } from 'react-redux';
+import { cartTotalSelector, emptyCart } from './cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const GooglePay = () => {
     const cartTotal = useSelector(cartTotalSelector).toString();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        dispatch(emptyCart());
+        navigate('/confirm');
+    };
 
     const paymentRequest = {
         apiVersion: 2,
@@ -45,10 +53,10 @@ const GooglePay = () => {
             paymentRequest={paymentRequest}
             onLoadPaymentData={paymentRequest => {
                 console.log('load payment data', paymentRequest);
+                handleCheckout();
             }}
-            onPaymentAuthorized={() => ({
-                transactionState: 'SUCCESS'
-            })}
+            onPaymentAuthorized={() => ({ transactionState: 'SUCCESS' })}
+            onError={error => console.error(error)}
             style={{ position: 'absolute', bottom: -25, right: 25 }}
         />
     );

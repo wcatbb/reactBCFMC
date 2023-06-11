@@ -221,6 +221,8 @@ h2 {
   object-fit: contain;
   width: 180px;
   height: 180px;
+  filter: drop-shadow(1px 1px 2px black);
+
 }
 
 .cartItem-title{
@@ -262,6 +264,7 @@ h2 {
 
 .cartItem-removeButton{
   color: rgb(241, 131, 131);
+  float: left;
 }
 
 .cartItem-removeButton:hover{

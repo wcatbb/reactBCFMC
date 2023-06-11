@@ -8,6 +8,7 @@ import Entry from './pages/Entry';
 import Officer from './pages/Officer';
 import Item from './pages/Item';
 import Cart from './pages/Cart'
+import Confirmation from './features/shop/Confirmation';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='calendar' element={<Calendar />} />
         <Route path='entry' element={<Entry />} />
         <Route path='cart' element={<Cart />} />
+        <Route path='confirm' element={<Confirmation />} />
         <Route
           path='about/:officerId'
           element={<Officer />}
