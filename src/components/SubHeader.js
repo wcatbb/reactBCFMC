@@ -4,5 +4,5 @@ export const SubHeader = ( {current} ) => {
     <h2>{current}</h2>
     <hr />
     </>
-  );
-};
+  )
+}
