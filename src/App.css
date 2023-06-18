@@ -323,3 +323,8 @@ h2 {
   background-color: unset;
   border: 1px solid #FFD814;
 }
+
+.error{
+  position: absolute;
+  color: rgb(216, 0, 0);
+}

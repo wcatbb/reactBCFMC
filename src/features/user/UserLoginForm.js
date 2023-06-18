@@ -6,6 +6,7 @@ import {
     ModalHeader,
     ModalBody,
     FormGroup,
+    Row,
     Button
 } from 'reactstrap';
 import { Formik, Field, Form } from 'formik';
@@ -63,29 +64,33 @@ const UserLoginForm = () => {
                     >
                         {({ errors, touched }) => (
                             <Form>
-                                <FormGroup>
-                                    <Field
-                                        id='email'
-                                        name='email'
-                                        placeholder='Email'
-                                        className='form-control'
-                                    />
-                                    {errors.email && touched.email ? (
-                                        <div className='text-danger'>{errors.email}</div>
-                                    ) : null}
-                                </FormGroup>
-                                <FormGroup>
-                                    <Field
-                                        id='password'
-                                        name='password'
-                                        type='password'
-                                        placeholder='Password'
-                                        className='form-control'
-                                    />
-                                    {errors.password && touched.password ? (
-                                        <div className='text-danger'>{errors.password}</div>
-                                    ) : null}
-                                </FormGroup>
+                                <Row className='mb-2'>
+                                    <FormGroup>
+                                        <Field
+                                            id='email'
+                                            name='email'
+                                            placeholder='Email'
+                                            className='form-control'
+                                        />
+                                        {errors.email && touched.email ? (
+                                            <div className='error'>{errors.email}</div>
+                                        ) : null}
+                                    </FormGroup>
+                                </Row>
+                                <Row className='mb-2'>
+                                    <FormGroup>
+                                        <Field
+                                            id='password'
+                                            name='password'
+                                            type='password'
+                                            placeholder='Password'
+                                            className='form-control'
+                                        />
+                                        {errors.password && touched.password ? (
+                                            <div className='error'>{errors.password}</div>
+                                        ) : null}
+                                    </FormGroup>
+                                </Row>
                                 <Button type='submit' color='primary'>Login</Button>
                             </Form>
                         )}

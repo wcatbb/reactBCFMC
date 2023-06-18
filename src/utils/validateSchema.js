@@ -26,7 +26,7 @@ export const RegisterSchema = Yup.object().shape({
         .defined()
         .required('Required'),
     phone: Yup.string()
-        .matches(/.{10,}/, {
+        .matches(/.{14,}/, {
             excludeEmptyString: true,
             message: 'Must be 10 digits',
         })

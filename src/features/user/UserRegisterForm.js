@@ -6,6 +6,7 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
+    FormGroup,
     Button
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
@@ -38,7 +39,7 @@ const UserRegisterForm = () => {
                 size='lg'
                 onClick={() => setRegisterModalOpen(true)}>Register Today!
             </Button>
-            <Modal isOpen={registerModalOpen} className='modal-lg'>
+            <Modal isOpen={registerModalOpen} >
                 <ModalHeader toggle={() => setRegisterModalOpen(false)}><div className='modal-title'>Account Registration</div></ModalHeader>
                 <ModalBody className='container-fluid'>
                     <Formik
@@ -57,10 +58,9 @@ const UserRegisterForm = () => {
                     >
                         {({ values, setFieldValue }) => (
                             <Form>
-                                <Row>
-                                    <div className='form-group row align-items-center'>
-                                        <label htmlFor='firstName' className='col-lg-2 col-form-label'>First Name:</label>
-                                        <Col className='col-lg-4'>
+                                <FormGroup>
+                                    <Row className='mb-4'>
+                                        <Col>
                                             <Field
                                                 id='firstName'
                                                 name='firstName'
@@ -68,11 +68,10 @@ const UserRegisterForm = () => {
                                                 className='form-control'
                                             />
                                             <ErrorMessage name='firstName'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                        <label htmlFor='lastName' className='col-lg-2 col-form-label'>Last Name:</label>
-                                        <Col className='col-lg-4'>
+                                        <Col>
                                             <Field
                                                 id='lastName'
                                                 name='lastName'
@@ -80,31 +79,29 @@ const UserRegisterForm = () => {
                                                 className='form-control'
                                             />
                                             <ErrorMessage name='lastName'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                    </div>
-                                </Row>
-                                <Row>
-                                    <div className='form-group row align-items-center'>
-                                        <label htmlFor='phone' className='col-lg-2 col-form-label'>Phone:</label>
-                                        <Col className='col-lg-3'>
+                                    </Row>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Row className='mb-4'>
+                                        <Col>
                                             <Field
                                                 id='phone'
                                                 name='phone'
                                                 placeholder='Phone'
                                                 className='form-control'
-                                                onChange= {(e) => {
+                                                onChange={(e) => {
                                                     const value = e.target.value || '';
                                                     setFieldValue('phone', phoneFormat(value));
                                                 }}
                                             />
                                             <ErrorMessage name='phone'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                        <label htmlFor='email' className='col-lg-1 col-form-label'>Email:</label>
-                                        <Col className='col-lg-6'>
+                                        <Col>
                                             <Field
                                                 id='email'
                                                 name='email'
@@ -112,15 +109,14 @@ const UserRegisterForm = () => {
                                                 className='form-control'
                                             />
                                             <ErrorMessage name='email'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                    </div>
-                                </Row>
-                                <Row>
-                                    <div className='form-group row align-items-center mb-3'>
-                                        <label htmlFor='password' className='col-lg-2 col-form-label'>Password:</label>
-                                        <Col className='col-lg-3'>
+                                    </Row>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Row className='mb-4'>
+                                        <Col>
                                             <Field
                                                 id='password'
                                                 name='password'
@@ -129,11 +125,10 @@ const UserRegisterForm = () => {
                                                 className='form-control'
                                             />
                                             <ErrorMessage name='password'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                        <label htmlFor='confirmPassword' className='col-lg-3 col-form-label'>Confirm Password:</label>
-                                        <Col className='col-lg-4'>
+                                        <Col>
                                             <Field
                                                 id='confirmPassword'
                                                 name='confirmPassword'
@@ -142,13 +137,13 @@ const UserRegisterForm = () => {
                                                 className='form-control'
                                             />
                                             <ErrorMessage name='confirmPassword'>
-                                                {(msg) => <p className='text-danger'>{msg}</p>}
+                                                {(msg) => <p className='error'>{msg}</p>}
                                             </ErrorMessage>
                                         </Col>
-                                    </div>
-                                </Row>
-                                <Row>
-                                    <div className='form-group row align-items-center mb-3'>
+                                    </Row>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Row>
                                         <label htmlFor='status' className='col-md-2 col-form-label'>I am a:</label>
                                         <Col className='col btn-group btn-group-toggle col-md-4' data-toggle='buttons'>
                                             <Field
@@ -184,11 +179,10 @@ const UserRegisterForm = () => {
                                                         />
                                                     </label>
                                                 </div>
-
                                             </Field>
                                         </Col>
-                                    </div>
-                                </Row>
+                                    </Row>
+                                </FormGroup>
                                 <Button type='submit' color='primary'>Register</Button>
                             </Form>
                         )}
