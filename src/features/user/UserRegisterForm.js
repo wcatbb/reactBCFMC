@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     Col,
     Row,
@@ -11,34 +11,41 @@ import {
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { RegisterSchema, phoneFormat } from '../../utils/validateSchema';
+import { setCurrentUser, selectCurrentUser } from './userSlice';
+import defaultAvatar from '../../app/assets/img/user.png';
 
 const UserRegisterForm = () => {
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
-    // const dispatch = useDispatch();
+    const currentUser = useSelector(selectCurrentUser);
+    const dispatch = useDispatch();
 
-    // const handleRegister = (values) => {
-    //     const newUser = {
-    //         id: Date.now(),
-    //         firstName: values.firstName,
-    //         lastName: values.lastName,
-
-    //     }
-    //     dispatch(setCurrentUser(newUser));
-    //     setRegisterModalOpen(false);
-    // };
-
-    const onSubmit = values => {
+    const handleRegister = (values) => {
         console.log('Values', values);
+        const currentUser = {
+            id: Date.now(),
+            firstName: values.firstName,
+            lastName: values.lastName,
+            phone: values.phone,
+            email: values.email,
+            password: values.password,
+            class: values.class,
+            avatar: defaultAvatar
+        }
+        dispatch(setCurrentUser(currentUser));
         setRegisterModalOpen(false);
-    }
+
+    };
 
     return (
         <>
-            <Button
-                color='primary'
-                size='lg'
-                onClick={() => setRegisterModalOpen(true)}>Register Today!
-            </Button>
+            {currentUser ? (
+                <div></div>) : (
+                <Button
+                    color='primary'
+                    size='lg'
+                    onClick={() => setRegisterModalOpen(true)}>Register Today!
+                </Button>
+            )}
             <Modal isOpen={registerModalOpen} >
                 <ModalHeader toggle={() => setRegisterModalOpen(false)}><div className='modal-title'>Account Registration</div></ModalHeader>
                 <ModalBody className='container-fluid'>
@@ -50,10 +57,9 @@ const UserRegisterForm = () => {
                             email: '',
                             password: '',
                             confirmPassword: '',
-                            status: 'student'
+                            class: 'student'
                         }}
-                        // onSubmit={handleRegister}
-                        onSubmit={onSubmit}
+                        onSubmit={handleRegister}
                         validationSchema={RegisterSchema}
                     >
                         {({ values, setFieldValue }) => (
@@ -144,19 +150,19 @@ const UserRegisterForm = () => {
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
-                                        <label htmlFor='status' className='col-md-2 col-form-label'>I am a:</label>
+                                        <label htmlFor='class' className='col-md-2 col-form-label'>I am a:</label>
                                         <Col className='col btn-group btn-group-toggle col-md-4' data-toggle='buttons'>
                                             <Field
                                                 component='div'
-                                                name='status'
+                                                name='class'
                                             >
                                                 <div className='col btn-group btn-group-toggle col-md-4' data-toggle='buttons'>
                                                     <label htmlFor='student' className='btn btn-danger btn-sm active'>Student
                                                         <input
                                                             type='radio'
                                                             id='student'
-                                                            defaultChecked={values.status === 'student'}
-                                                            name='status'
+                                                            defaultChecked={values.class === 'student'}
+                                                            name='class'
                                                             value='student'
                                                         />
                                                     </label>
@@ -164,8 +170,8 @@ const UserRegisterForm = () => {
                                                         <input
                                                             type='radio'
                                                             id='teacher'
-                                                            defaultChecked={values.status === 'teacher'}
-                                                            name='status'
+                                                            defaultChecked={values.class === 'teacher'}
+                                                            name='class'
                                                             value='teacher'
                                                         />
                                                     </label>
@@ -173,8 +179,8 @@ const UserRegisterForm = () => {
                                                         <input
                                                             type='radio'
                                                             id='volunteer'
-                                                            defaultChecked={values.status === 'volunteer'}
-                                                            name='status'
+                                                            defaultChecked={values.class === 'volunteer'}
+                                                            name='class'
                                                             value='volunteer'
                                                         />
                                                     </label>
@@ -183,7 +189,9 @@ const UserRegisterForm = () => {
                                         </Col>
                                     </Row>
                                 </FormGroup>
-                                <Button type='submit' color='primary'>Register</Button>
+                                <Button
+                                    type='submit'
+                                    color='primary'>Register</Button>
                             </Form>
                         )}
                     </Formik>
