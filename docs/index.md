@@ -1,2 +1,2 @@
-[a relative link](privacy.md)
-[a relative link](terms.md)
+[privacy policy](privacy.md)
+[terms and conditions](terms.md)
