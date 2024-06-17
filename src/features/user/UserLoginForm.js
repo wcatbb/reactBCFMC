@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentUser, selectCurrentUser } from './userSlice';
+import { setCurrentUser, clearCurrentUser, selectCurrentUser } from './userSlice';
 import {
     Modal,
     ModalHeader,
@@ -30,15 +30,28 @@ const UserLoginForm = () => {
         setLoginModalOpen(false);
     };
 
+    const handleLogout = () => {
+        dispatch(clearCurrentUser());
+    };
+
     return (
         <div className='navbar-text ml-auto'>
             {currentUser ? (
-                <div style={{ width: '3rem', height: '3rem' }}>
-                    <img
-                        src={currentUser.avatar}
-                        alt={'user'}
-                        style={{ width: '100%', height: '100%' }}
-                    />
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div style={{ width: '3rem', height: '3rem', marginRight: '1rem' }}>
+                        <img
+                            src={currentUser.avatar}
+                            alt={'user'}
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    </div>
+                    <Button
+                        outline
+                        onClick={handleLogout}
+                        style={{ color: 'white', border: '1px solid white' }}
+                    >
+                        <i className='fa fa-sign-out fa-lg' /> Logout
+                    </Button>
                 </div>
             ) : (
                 <Button

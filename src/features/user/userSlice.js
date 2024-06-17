@@ -10,12 +10,15 @@ const userSlice = createSlice({
     reducers: {
         setCurrentUser: (state, action) => {
             return { ...state, currentUser: action.payload }
+        },
+        clearCurrentUser: (state) => {
+            state.currentUser = null;
         }
     }
 });
 
 export const userReducer = userSlice.reducer;
-export const { setCurrentUser } = userSlice.actions;
+export const { setCurrentUser, clearCurrentUser } = userSlice.actions;
 export const selectCurrentUser = (state) => {
     return state.user.currentUser;
 }
